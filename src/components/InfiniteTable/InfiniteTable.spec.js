@@ -13,6 +13,9 @@ describe('InfiniteTable Component', () => {
     render(<InfiniteTable/>)
 
     expect(axios.get).toHaveBeenCalledWith('https://randomuser.me/api/', {
+      params: {
+        results: 10
+      },
       responseType: 'json'
     })
   })

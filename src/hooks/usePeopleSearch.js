@@ -7,6 +7,9 @@ const usePeopleSearch = () => {
   
   useEffect(() => {
     axios.get('https://randomuser.me/api/', {
+      params: {
+        results: 10
+      },
       responseType: 'json'
     }).then(response => {
       setPeople(People({ apiData: response.data.results } ))
