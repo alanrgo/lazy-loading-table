@@ -5,11 +5,20 @@ const PeopleTableList = ({people}) => {
   
   return (
       <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+          </tr>
+        </thead>
         <tbody>
         {people.map(person => {
           return (
-              <tr key={`${person}-tr`}>
-                <td key={person}>{ person }</td>
+              <tr key={`${person.name}-tr`}>
+                <td key={person.name}>{ person.name }</td>
+                <td key={person.email}>{ person.email }</td>
+                <td key={person.city}>{ person.city }</td>
               </tr>
               )}
           )}
