@@ -8,6 +8,7 @@ const InfiniteTable = () => {
   }, []);
   
   const people = usePeopleSearch()
+  if(!people) return null
   return (
       <PeopleTableList people={people}/>
   )
