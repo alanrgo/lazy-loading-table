@@ -60,11 +60,11 @@ const PeopleTableList = ({people}) => {
         {processedPeopleData.map((person, index) => {
           return (
               <tr key={`${person.name}${index}-tr`}>
-                <td key={`${person.name}${index}-name`}>{ person.name }</td>
+                <td key={`${index}-name`} data-testid={`${index}-name`}>{ person.name }</td>
+                <td className={'resizer'} />
+                <td key={`${index}-email`} data-testid={`${index}-email`}>{ person.email }</td>
                 <td className={'resizer'}/>
-                <td key={`${person.name}${index}-email`}>{ person.email }</td>
-                <td className={'resizer'}/>
-                <td key={`${person.name}${index}-city`}>{ person.city }</td>
+                <td key={`${index}-city`} data-testid={`${index}-city`}>{ person.city }</td>
               </tr>
               )}
           )}
