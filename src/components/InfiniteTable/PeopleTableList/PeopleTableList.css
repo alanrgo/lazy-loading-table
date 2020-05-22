@@ -1,11 +1,23 @@
 table {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     width: 100%;
+    border-spacing: unset;
+    box-sizing: content-box;
+    border-color: unset;
+    border-collapse: separate;
 }
 
 td, th {
-    border: 1px solid #ddd;
     padding: 8px;
+}
+.resizer {
+    padding: 0;
+    width: 5px;
+    border-left: none;
+}
+
+.resizer-head {
+    background-color: #28712b;
 }
 
 th {

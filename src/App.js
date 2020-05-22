@@ -4,7 +4,6 @@ import InfiniteTable from "./components/InfiniteTable/InfiniteTable";
 
 function App() {
   
-  
   return (
     <div className="App">
       <header className="App-header">

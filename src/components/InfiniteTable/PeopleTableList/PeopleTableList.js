@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import PropTypes from 'prop-types';
 import './PeopleTableList.css'
 import _ from 'lodash'
+import ColumnResizer from 'react-column-resizer'
 
 const PeopleTableList = ({people}) => {
 
@@ -49,17 +50,21 @@ const PeopleTableList = ({people}) => {
         <thead>
           <tr>
             <th onClick={() => handleOnSortingClick('name')}>Name</th>
+            <ColumnResizer minWidth={100} className={'resizer resizer-head'}/>
             <th onClick={() => handleOnSortingClick('email')}>Email</th>
+            <ColumnResizer minWidth={100} className={'resizer resizer-head'}/>
             <th onClick={() => handleOnSortingClick('city')}>City</th>
           </tr>
         </thead>
         <tbody>
-        {processedPeopleData.map(person => {
+        {processedPeopleData.map((person, index) => {
           return (
-              <tr key={`${person.name}-tr`}>
-                <td key={person.name}>{ person.name }</td>
-                <td key={person.email}>{ person.email }</td>
-                <td key={person.city}>{ person.city }</td>
+              <tr key={`${person.name}${index}-tr`}>
+                <td key={`${person.name}${index}-name`}>{ person.name }</td>
+                <td className={'resizer'}/>
+                <td key={`${person.name}${index}-email`}>{ person.email }</td>
+                <td className={'resizer'}/>
+                <td key={`${person.name}${index}-city`}>{ person.city }</td>
               </tr>
               )}
           )}

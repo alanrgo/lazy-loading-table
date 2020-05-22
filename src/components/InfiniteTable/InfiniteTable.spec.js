@@ -8,6 +8,7 @@ jest.mock('axios')
 axios.CancelToken = jest.fn()
 
 describe('InfiniteTable Component', () => {
+  console.error = jest.fn()
   
   it('should call random people api when instantiated', () => {
     axios.get.mockImplementationOnce(() => Promise.resolve({data: RandomPeopleApiResponseExample} ))
